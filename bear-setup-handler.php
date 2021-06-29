@@ -40,8 +40,8 @@ if (
         project_end DATE NOT NULL,
         project_context LONGTEXT NOT NULL,
         project_githublink LONGTEXT,
-        project_link LONGTEXT,
-        )";
+        project_link LONGTEXT
+        );";
         
         $conn->exec($sql); 
          
