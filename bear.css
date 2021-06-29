@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap');
+
+
+html {
+    font-size:62.5%;
+}
+
+body {
+    background-image: url("mark-basarab-bear.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.flex-center{
+    display:flex;
+    width:100%;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    font-family: "Heebo", sans-serif;
+    font-weight:500;
+    padding:3rem;
+    min-width: fit-content;
+    width: 18%;
+    max-height: 36vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    color:rgb(80, 80, 80);
+}
+
+.glass {
+background: rgba( 255, 255, 255, 0.55 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.0px );
+-webkit-backdrop-filter: blur( 4.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
