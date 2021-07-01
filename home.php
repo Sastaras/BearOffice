@@ -1,3 +1,4 @@
+<!-- ACT AS THE INDEX OF THE WEBSITE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,7 @@
   <title>BearOffice</title>
 </head>
 <body>
-  
-    <a href="register-form.php"><button>S'inscrire</button></a>
-    <a href="login-form.php"><button>Se connecter</button></a>
+    <a href="bear-modules/register-form.php"><button>S'inscrire</button></a>
+    <a href="bear-modules/login-form.php"><button>Se connecter</button></a>
 </body>
 </html>

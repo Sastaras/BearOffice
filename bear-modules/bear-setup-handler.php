@@ -79,7 +79,7 @@ if (
             $query->bindValue(':password', $passwordhash, PDO::PARAM_STR);
             $query->execute();
             echo 'Configuration complete';
-            header("Location: home.php");
+            header("Location: ../home.php");
       }else{
             echo 'Passwords not matching';
       }

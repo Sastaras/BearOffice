@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-image: url("mark-basarab-bear-min.jpg");
+    background-image: url("../bear-content/img/mark-basarab-bear-min.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;

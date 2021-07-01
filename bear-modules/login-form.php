@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="bear.css">
+    <link rel="stylesheet" href="../bear-css/bear.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <input type="submit" value="Envoyer">
-                    <a href="home.php"><button>Retour</button></a>
+                    <a href="../home.php"><button>Retour</button></a>
                 </div>
             </form>
             
