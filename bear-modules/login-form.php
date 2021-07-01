@@ -15,19 +15,18 @@
         <div class="container glass">
             <form action="login-form-handler.php" method="post">
                 <div>
-                    <label for="username">Login : </label><br/>
+                    <label for="username">Login : </label><br />
                     <input type="text" name="username">
                 </div>
                 <div>
-                    <label for="password" input="password">Password : </label><br/>
+                    <label for="password" input="password">Password : </label><br />
                     <input type="password" name="pwd">
                 </div>
                 <div>
-                    <input type="submit" value="Envoyer">
-                    <a href="../home.php"><button>Retour</button></a>
+                    <input type="submit" value="Submit">
                 </div>
             </form>
-            
+           <a href="../home.php"><button>Back</button></a>
         </div>
     </div>
 </body>

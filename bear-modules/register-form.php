@@ -30,6 +30,8 @@
         <div>
             <input type="submit" value="Submit">
         </div>
+    </form>
+    <a href="../home.php"><button>Back</button></a>
 </body>
 
 </html>
