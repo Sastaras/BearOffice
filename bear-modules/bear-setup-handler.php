@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (
     isset($_POST['server']) && !empty($_POST['server']) && 
@@ -81,9 +82,10 @@ if (
             echo 'Configuration complete';
             header("Location: ../home.php");
       }else{
-            echo 'Passwords not matching';
-      }
+        $error= "Password not matching";
+            $_SESSION["error"] = $error;
+            header("Location: register-form.php");}
 }else{
-   echo 'Every fields must be completed';   
-
-}
+    $error= "Every fields must be filled";
+    $_SESSION["error"] = $error;
+    header("Location: register-form.php");}   

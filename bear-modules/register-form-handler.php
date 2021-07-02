@@ -24,9 +24,15 @@ if (
                     echo 'Your account has been created';
                     header("Location: ../home.php");
         }
-        else echo 'Passwords not matching';
+        else {
+            $error= "Password not matching";
+            $_SESSION["error"] = $error;
+            header("Location: register-form.php");}
             
 }
-else echo 'Every fields must be completed';   
+else {
+    $error= "Every fields must be filled";
+    $_SESSION["error"] = $error;
+    header("Location: register-form.php");}
 
         

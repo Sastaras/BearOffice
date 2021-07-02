@@ -9,6 +9,7 @@
   <title>BearOffice</title>
 </head>
 <body>
+<?php include('bear-modules/errors.php'); ?>
     <a href="bear-modules/register-form.php"><button>S'inscrire</button></a>
     <a href="bear-modules/login-form.php"><button>Se connecter</button></a>
 </body>

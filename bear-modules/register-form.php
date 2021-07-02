@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,31 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearOffice - Register</title>
+    <link rel="stylesheet" href="../bear-css/bear.css">
 </head>
 
 <body>
-    <form action="register-form-handler.php" method="post">
-        <div>
-            <label for="username">Username: </label>
-            <input type="text" name="username">
+    <div class="flex-center">
+        <div class="container glass">
+            <form action="register-form-handler.php" method="post">
+                <?php include('errors.php'); ?>
+                <div>
+                    <label for="username">Username: </label><br />
+                    <input type="text" name="username" required>
+                </div>
+                <div>
+                    <label for="e-mail">E-mail: </label><br />
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password" input="password">Password: </label><br />
+                    <input type="password" name="pwd" required>
+                </div>
+                <div>
+                    <label for="password-confirm">Confirm password: </label><br />
+                    <input type="password" name="pwdconf" required>
+                </div>
+                <div>
+                    <input type="submit" value="Submit"><a href="../home.php"><button>Back</button></a>
+                </div>
+            </form>
         </div>
-        <div>
-            <label for="e-mail">E-mail: </label>
-            <input type="email" name="email">
-        </div>
-        <div>
-            <label for="password" input="password">Password: </label>
-            <input type="password" name="pwd">
-        </div>
-        <div>
-            <label for="password-confirm">Confirm password: </label>
-            <input type="password" name="pwdconf">
-        </div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-    </form>
-    <a href="../home.php"><button>Back</button></a>
+    </div>
 </body>
 
 </html>

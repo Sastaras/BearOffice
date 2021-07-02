@@ -1,3 +1,6 @@
+<?php
+session_start();
+$errors = array();  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +10,9 @@
     <title>BearOffice - Dashboard</title>
 </head>
 <body>
-
+<?php include('errors.php'); ?>
 <div>
 <?php
-session_start();  
 require_once("db-connect.php");
 if(isset($_SESSION["username"])){  
     echo '<h3>Login Success, Welcome - '.$_SESSION["username"].'</h3>';  
