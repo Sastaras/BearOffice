@@ -32,9 +32,10 @@
                     <input type="password" name="pwdconf" required>
                 </div>
                 <div>
-                    <input type="submit" value="Submit"><a href="../home.php"><button>Back</button></a>
+                    <input type="submit" value="Submit">
                 </div>
             </form>
+            <a href="../home.php"><button>Back</button></a>
         </div>
     </div>
 </body>

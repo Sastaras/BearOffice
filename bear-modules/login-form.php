@@ -22,7 +22,7 @@ session_start();?>
                     <input type="text" name="username" required>
                 </div>
                 <div>
-                    <label for="password" input="password">Password : </label><br />
+                    <label for="password" input="passwrd">Password : </label><br />
                     <input type="password" name="pwd" required>
                 </div>
                 <div>
