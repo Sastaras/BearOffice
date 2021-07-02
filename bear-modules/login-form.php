@@ -26,9 +26,11 @@ session_start();?>
                     <input type="password" name="pwd" required>
                 </div>
                 <div>
-                    <input type="submit" value="Submit"><a href="../home.php"><button>Back</button></a>
+                    <input type="submit" value="Submit">
+                    <a href="../home.php"><button type="button">Back</button></a>
                 </div>
             </form>
+            
         </div>
     </div>
 </body>

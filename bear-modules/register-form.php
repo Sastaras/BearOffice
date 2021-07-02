@@ -33,9 +33,9 @@
                 </div>
                 <div>
                     <input type="submit" value="Submit">
+                    <a href="../home.php"><button type="button">Back</button></a>
                 </div>
             </form>
-            <a href="../home.php"><button>Back</button></a>
         </div>
     </div>
 </body>
