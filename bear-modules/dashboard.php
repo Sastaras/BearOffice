@@ -19,16 +19,20 @@ if(isset($_SESSION["username"])){
     echo '<br /><br /><a href="logout.php">Logout</a><br/><br/>';  
 }  
 
-$query = $db->query("SELECT username, email, reg_date FROM Bear_users ORDER BY reg_date DESC");
+$query = $db->query("SELECT id, username, email, reg_date FROM Bear_users ORDER BY reg_date DESC");
 
 if($query->rowCount() > 0){
     while($row = $query->fetch(PDO::FETCH_ASSOC)){
+        $id = $row["id"];
         $user = $row["username"];
         $mail = $row["email"];
         $regdate = $row["reg_date"];
 
 ?>
-    <?php echo "user: $user | e-mail: $mail | registered: $regdate <br/><br/>"; ?>
+    <?php echo "user: $user | e-mail: $mail | registered: $regdate"; ?>
+    <a href="edit-user.php?id=<?php echo $id;?>">Edit</a>
+    <a href="delete-user.php?id=<?php echo $id;?>">Delete</a>
+    <br/><br/>
 <?php }
 }else{ ?>
     <p>Users not found...</p>

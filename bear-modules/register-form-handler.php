@@ -6,7 +6,7 @@ if (
     isset($_POST['username']) && !empty($_POST['username']) && 
     isset($_POST['email']) && !empty($_POST['email']) && 
     isset($_POST['pwd']) && !empty($_POST['pwd']) &&
-    isset($_POST['pwdconf']) && empty($_POST['pwdconf'])
+    isset($_POST['pwdconf']) && !empty($_POST['pwdconf'])
     ){
         if ($_POST['pwd'] === $_POST['pwdconf']) {
             $username = strip_tags( $_POST['username']);
