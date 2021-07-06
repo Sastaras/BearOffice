@@ -21,8 +21,11 @@ if (
                     $query->bindValue(':email', $email, PDO::PARAM_STR);
                     $query->bindValue(':password', $passwordhash, PDO::PARAM_STR);
                     $query->execute();
-                    echo 'Your account has been created';
-                    header("Location: ../home.php");
+
+                    include('send-validation.php');
+
+                    echo 'Your account has been created, a validation mail has been sent to your e-mail address. Redirecting...';
+                    header("refresh:5;url=../home.php");
         }
         else {
             $error= "Password not matching";
