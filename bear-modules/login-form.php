@@ -1,5 +1,5 @@
-<?php 
-session_start();?>
+<?php
+session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ session_start();?>
                     <a href="../home.php"><button type="button">Back</button></a>
                 </div>
             </form>
-            
+
         </div>
     </div>
 </body>

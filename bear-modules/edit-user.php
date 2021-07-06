@@ -1,5 +1,5 @@
 <?php session_start();
-$_SESSION["edit-user-ID"] = $_GET['id'];?>
+$_SESSION["edit-user-ID"] = $_GET['id']; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +29,7 @@ $_SESSION["edit-user-ID"] = $_GET['id'];?>
                     <input type="password" name="pwd">
                 </div>
                 <div>
-                    <label for="password-confirm">Confirm password: </label><br/>
+                    <label for="password-confirm">Confirm password: </label><br />
                     <input type="password" name="pwdconf">
                 </div>
                 <div>

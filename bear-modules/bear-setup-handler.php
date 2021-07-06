@@ -2,20 +2,20 @@
 session_start();
 
 if (
-    isset($_POST['server']) && !empty($_POST['server']) && 
-    isset($_POST['serveruser']) && !empty($_POST['serveruser']) && 
-    isset($_POST['serverpwd']) && 
+    isset($_POST['server']) && !empty($_POST['server']) &&
+    isset($_POST['serveruser']) && !empty($_POST['serveruser']) &&
+    isset($_POST['serverpwd']) &&
     isset($_POST['dbname']) && !empty($_POST['dbname']) &&
-    isset($_POST['username']) && !empty($_POST['username']) && 
-    isset($_POST['email']) && !empty($_POST['email']) && 
+    isset($_POST['username']) && !empty($_POST['username']) &&
+    isset($_POST['email']) && !empty($_POST['email']) &&
     isset($_POST['pwd']) && !empty($_POST['pwd']) &&
     isset($_POST['pwdconf']) && !empty($_POST['pwdconf'])
-    ){
-      
-    $server = strip_tags( $_POST['server']);
-    $serveruser = strip_tags( $_POST['serveruser']);
-    $serverpwd = strip_tags( $_POST['serverpwd']);
-    $dbname = strip_tags( $_POST['dbname']);
+) {
+
+    $server = strip_tags($_POST['server']);
+    $serveruser = strip_tags($_POST['serveruser']);
+    $serverpwd = strip_tags($_POST['serverpwd']);
+    $dbname = strip_tags($_POST['dbname']);
 
     try {
         $conn = new PDO("mysql:host=$server;dbname=$dbname", $serveruser, $serverpwd);
@@ -43,49 +43,50 @@ if (
         project_githublink LONGTEXT,
         project_link LONGTEXT
         );";
-        
-        $conn->exec($sql); 
-         
+
+        $conn->exec($sql);
+
         echo "Database configured";
-    } 
-    catch(PDOException $e) { 
+    } catch (PDOException $e) {
         $e->getMessage();
     }
-      // Making config.php
-      $configfile = fopen("config.php", "w");
-      $config = "<?php ";
-      fwrite($configfile, $config);
-      $config = "\$server = '$server';";
-      fwrite($configfile, $config);
-      $config = "\$serveruser = '$serveruser';";
-      fwrite($configfile, $config);
-      $config = "\$serverpwd = '$serverpwd';";
-      fwrite($configfile, $config);
-      $config = "\$dbname = '$dbname';";
-      fwrite($configfile, $config);
-      fclose($configfile);
+    // Making config.php
+    $configfile = fopen("config.php", "w");
+    $config = "<?php ";
+    fwrite($configfile, $config);
+    $config = "\$server = '$server';";
+    fwrite($configfile, $config);
+    $config = "\$serveruser = '$serveruser';";
+    fwrite($configfile, $config);
+    $config = "\$serverpwd = '$serverpwd';";
+    fwrite($configfile, $config);
+    $config = "\$dbname = '$dbname';";
+    fwrite($configfile, $config);
+    fclose($configfile);
 
-      // Create first user
-      if ($_POST['pwd'] === $_POST['pwdconf']) {
-      $username = strip_tags( $_POST['username']);
-      $email = strip_tags($_POST['email']);
-      $password = strip_tags($_POST['pwd']);
-     
-            $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+    // Create first user
+    if ($_POST['pwd'] === $_POST['pwdconf']) {
+        $username = strip_tags($_POST['username']);
+        $email = strip_tags($_POST['email']);
+        $password = strip_tags($_POST['pwd']);
 
-            $sql = "INSERT INTO Bear_users(username,email,pwd) VALUES(:username,:email,:password)";
-            $query = $conn->prepare($sql);
-            $query->bindValue(':username', $username, PDO::PARAM_STR);
-            $query->bindValue(':email', $email, PDO::PARAM_STR);
-            $query->bindValue(':password', $passwordhash, PDO::PARAM_STR);
-            $query->execute();
-            echo 'Configuration complete';
-            header("Location: ../home.php");
-      }else{
-        $error= "Password not matching";
-            $_SESSION["error"] = $error;
-            header("Location: register-form.php");}
-}else{
-    $error= "Every fields must be filled";
+        $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO Bear_users(username,email,pwd) VALUES(:username,:email,:password)";
+        $query = $conn->prepare($sql);
+        $query->bindValue(':username', $username, PDO::PARAM_STR);
+        $query->bindValue(':email', $email, PDO::PARAM_STR);
+        $query->bindValue(':password', $passwordhash, PDO::PARAM_STR);
+        $query->execute();
+        echo 'Configuration complete';
+        header("Location: ../home.php");
+    } else {
+        $error = "Password not matching";
+        $_SESSION["error"] = $error;
+        header("Location: register-form.php");
+    }
+} else {
+    $error = "Every fields must be filled";
     $_SESSION["error"] = $error;
-    header("Location: register-form.php");}   
+    header("Location: register-form.php");
+}

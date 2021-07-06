@@ -18,4 +18,3 @@ else
     $error= "Error deleting user";
     $_SESSION["error"] = $error;
 }
-?>

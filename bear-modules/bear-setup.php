@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php include('errors.php'); ?>
+    <?php include('errors.php'); ?>
     <form action="bear-setup-handler.php" method="post">
         <div>
             <label for="server">Server address: </label>
