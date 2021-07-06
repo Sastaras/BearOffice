@@ -30,7 +30,9 @@ if (
         username VARCHAR(30) NOT NULL,
         email VARCHAR(255) NOT NULL,
         pwd VARCHAR(255) NOT NULL,
-        reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        validkey VARCHAR(255),
+        active TINYINT(1) NOT NULL DEFAULT'0'
         );
         
     
