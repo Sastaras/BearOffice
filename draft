@@ -1,0 +1,9 @@
+Sêcuriser la génération du golden de validation.
+
+mt_srand((double) microtime() * 1000000);
+    function random_string ($length = 16)
+    {
+        $string = "";
+        for ($n = 0; $n < count($length); $n++) $string .= chr(rand(32, 126));
+        return $string;
+    }
