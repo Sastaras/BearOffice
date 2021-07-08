@@ -1,4 +1,4 @@
-Sêcuriser la génération du golden de validation.
+Sêcuriser la génération du token de validation.
 
 mt_srand((double) microtime() * 1000000);
     function random_string ($length = 16)
