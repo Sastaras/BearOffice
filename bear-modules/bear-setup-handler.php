@@ -74,11 +74,12 @@ if (
 
         $passwordhash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO Bear_users(username,email,pwd) VALUES(:username,:email,:password)";
+        $sql = "INSERT INTO Bear_users(username,email,pwd,active) VALUES(:username,:email,:password,:active)";
         $query = $conn->prepare($sql);
         $query->bindValue(':username', $username, PDO::PARAM_STR);
         $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->bindValue(':password', $passwordhash, PDO::PARAM_STR);
+        $query->bindValue(':active', 1, PDO::PARAM_INT);
         $query->execute();
         echo 'Configuration complete';
         header("Location: ../home.php");
